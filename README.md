@@ -5,12 +5,19 @@ Exposing key/value as a JSON.
 
 Write value on a socket, with `nc` or other low tech tool. Read it with curl.
 
+Install
+-------
+
+    npm install -g metricsd
+
 Try it
 ------
 
 In a terminal
 
-    node app.js
+    metricsd
+
+You can specify a config file as first argument. Have a look at _conf.json_
 
 In an other terminnal
 
@@ -28,8 +35,8 @@ First event a dump, followings are new values.
 
 First event is a complete dump, following by a simple key/value for each modifications.
 
-Install
--------
+Install as a service
+--------------------
 
 An init.d script is provided
 
@@ -42,5 +49,7 @@ Todo
  * √ set value over a socket
  * √ expose values as Server Sent Event
  * √ homepage with some javascripts.
+ * √ registerable modules
+ * √ config file
  * _ backup JSON file for crash proof
  * _ not only GAUGE, add COUNTER type

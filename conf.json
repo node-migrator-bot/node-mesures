@@ -1,0 +1,10 @@
+{
+    "host": "localhost",
+    "port": 1337,
+    "plugins": {
+        "input/tcp_socket": [8124, "localhost"],
+        "state_web": [],
+        "proc/stats": [],
+        "output/vapor": []
+    }
+}
