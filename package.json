@@ -4,13 +4,16 @@
     "keywords": ["metrics"],
     "version": "0.1.0",
     "homepage": "https://github.com/bearstech/node-metrics",
-    "repository": "",
+    "repository": "git://github.com/bearstech/node-metrics.git",
     "author": "Mathieu Lecarme <mlecarme@bearstech.com>",
     "dependencies": {
     },
     "devDependencies": {
     },
     "engines": ["node >= 0.6.0"],
+    "licences": {
+        "type": "GPLv3"
+    },
     "bin": {
         "metricsd": "bin/metricsd.js"
     }
