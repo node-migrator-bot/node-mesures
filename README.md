@@ -35,7 +35,9 @@ Install as a service
 
 Install the application globaly :
 
-    npm install -g metricsd
+    npm install -g mesures
+
+Mesures, like metrics in French.
 
 An init.d script is provided
 

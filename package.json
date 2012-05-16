@@ -1,8 +1,8 @@
 {
-    "name": "metricsd",
+    "name": "mesures",
     "description": "",
     "keywords": ["metrics"],
-    "version": "0.1.0",
+    "version": "0.1.1",
     "homepage": "https://github.com/bearstech/node-metrics",
     "repository": "git://github.com/bearstech/node-metrics.git",
     "author": "Mathieu Lecarme <mlecarme@bearstech.com>",
