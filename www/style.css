@@ -13,12 +13,11 @@ h1 {
     position: absolute;
     left: -5px;
     top: -80px;
-    
     margin-bottom: 10px;
     color: white;
     -webkit-transform: rotate(-10deg);
     -moz-transform: rotate(-10deg);
-	z-index: -1;
+    z-index: -1;
 }
 
 table {

@@ -19,11 +19,11 @@ if (args.length) {
     conf = {
         host: 'localhost',
         port: 1337,
-        plugins: {
-            "input/tcp_socket": [8124, "localhost"],
-            "state_web": [],
-            "proc/stats": [],
-            "output/vapor": []
+        plugins: { // [TODO] named arguments
+            'input/tcp_socket': [8124, 'localhost'],
+            'state_web': [],
+            'proc/stats': [],
+            'output/vapor': []
         }
     };
 }
@@ -33,6 +33,7 @@ var router = new Router(server);
 
 server.listen(conf.port, conf.host);
 
+// [TODO] counting registered plugins and trigger a "everybody is ready" call back.
 for (var plugin in conf.plugins) {
     var p = require('../lib/' + plugin);
     p.register(state, router, conf.plugins[plugin]);
