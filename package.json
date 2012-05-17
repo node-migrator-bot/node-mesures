@@ -2,9 +2,9 @@
     "name": "mesures",
     "description": "",
     "keywords": ["metrics"],
-    "version": "0.1.1",
-    "homepage": "https://github.com/bearstech/node-metrics",
-    "repository": "git://github.com/bearstech/node-metrics.git",
+    "version": "0.1.2",
+    "homepage": "https://github.com/bearstech/node-mesures",
+    "repository": "git://github.com/bearstech/node-mesures.git",
     "author": "Mathieu Lecarme <mlecarme@bearstech.com>",
     "dependencies": {
     },
@@ -15,6 +15,6 @@
         "type": "GPLv3"
     },
     "bin": {
-        "metricsd": "bin/metricsd.js"
+        "mesures": "bin/mesures.js"
     }
 }

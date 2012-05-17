@@ -1,7 +1,9 @@
-Metrics
+Mesures
 =======
 
 Exposing key/value over HTTP as a JSON, even in real time.
+
+Mesures, like metrics in French.
 
 Write value on a socket, with `nc` or other low tech tool. Read it with curl.
 
@@ -10,7 +12,7 @@ Try it
 
 In a terminal
 
-    ./bin/metricsd.js
+    ./bin/mesures.js
 
 You can specify a config file as first argument. Have a look at _conf.json_
 
@@ -36,8 +38,6 @@ Install as a service
 Install the application globaly :
 
     npm install -g mesures
-
-Mesures, like metrics in French.
 
 An init.d script is provided
 
