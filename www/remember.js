@@ -43,3 +43,37 @@ remember.Remember.prototype.garbage = function(now) {
         }
     }
 };
+
+/**
+ * @return {object} min/max.
+ */
+remember.Remember.prototype.limits = function() {
+    var min, max = null;
+    for (ts in this.values) {
+        var value = this.values[ts];
+        if (min == null) {
+            min = value;
+        } else {
+            if (value < min) {
+                min = value;
+            }
+        }
+        if (max == null) {
+            max = value;
+        } else {
+            if (value > max) {
+                max = value;
+            }
+        }
+    }
+    return {
+        ts: {
+            min: this.timestamps[0],
+            max: this.timestamps[this.timestamps.length - 1]
+        },
+        value: {
+            min: min,
+            max: max
+        }
+    };
+};
