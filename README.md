@@ -35,13 +35,12 @@ First event is a complete dump, following by a simple key/value for each modific
 Install as a service
 --------------------
 
-Install the application globaly :
+There is a script to install _mesures_ on a debian like Linux
 
-    npm install -g mesures
+    sudo ./install_debian.sh
 
-An init.d script is provided
-
-    sudo useradd --system --user-group metricsd
+The scripts create a new user _mesures:mesures_, copy the default conf
+and install the init.d boot scipt.
 
 Put a nice Nginx in front, it will handle the port 80 for you.
 
