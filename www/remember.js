@@ -77,3 +77,15 @@ remember.Remember.prototype.limits = function() {
         }
     };
 };
+
+/**
+ * @return {array} iterate timestamp/value.
+ */
+remember.Remember.prototype.items = function() {
+    var items = [];
+    for (var i = this.timestamps.length - 1; i >= 0; i--) {
+        var ts = this.timestamps[i];
+        items.push([ts, this.values[ts]]);
+    }
+    return items;
+};
