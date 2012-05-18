@@ -11,7 +11,7 @@ $(function() {
         var data = JSON.parse(event.data); // read the event as JSON
         for (var k in data) {
             if(! remembers[k]) {
-                remembers[k] = new Remember(60 * 1000);
+                remembers[k] = new remember.Remember(60 * 1000);
             }
             remembers[k].set(data[k]);
             var line = $('#' + escape(k), table);
@@ -26,31 +26,5 @@ $(function() {
         }
     };
 
-    var Remember = function(howlong) {
-        this.howlong = howlong;
-        this.values = {};
-        this.timestamps = [];
-    };
-
-    Remember.prototype.set = function(value) {
-        var now = Date.now();
-        this.garbage(now);
-        this.values[now] = value;
-        this.timestamps.push(now);
-        return now;
-    };
-
-    Remember.prototype.garbage = function(now) {
-        for (var i=this.timestamps.length -1; i >= 0; i--) {
-            var ts = this.timestamps[i];
-            console.log(ts, now, this.howlong);
-            if(ts < ( now - this.howlong ) ) {
-                this.timestamps.pop();
-                delete this.values[ts];
-            } else {
-                return;
-            }
-        }
-    };
 
 });
