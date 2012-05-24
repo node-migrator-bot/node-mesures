@@ -34,3 +34,14 @@ th {
 td {
     color: black;
 }
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.graph {
+  width: 100px;
+  height: 24px;
+}
