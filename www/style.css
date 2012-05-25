@@ -20,13 +20,24 @@ h1 {
     z-index: -1;
 }
 
-table {
+#datas {
     background-color: #cce0fd;
     border: thick solid #4c5c79;
     padding: 5px;
     margin: 75px 10px 10px;
-    width: 200px;
+    width: 500px;
 }
+
+#datas h2 {
+    margin: 3px;
+}
+
+.value {
+    width: 25px;
+    padding: 3px;
+    float: left;
+}
+
 th {
     font-size: 18pt;
     color: #525b6b;
@@ -35,13 +46,18 @@ td {
     color: black;
 }
 
+.draw {
+}
+
 .line {
-  fill: none;
-  stroke: black;
-  stroke-width: 2px;
+    fill: none;
+    stroke: black;
+    stroke-width: 2px;
 }
 
 .graph {
-  width: 100px;
-  height: 24px;
+    width: 300px;
+    height: 60px;
+    border: thin solid black;
+    margin-left: 30px;
 }

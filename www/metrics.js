@@ -1,6 +1,6 @@
 $(function() {
 
-    var table = $('table');
+    var table = $('#datas');
 
     var stocks = new EventSource('/events');
     function escape(e) {
@@ -14,10 +14,10 @@ $(function() {
     var draw = d3.svg.line().
         x(function(d, i) {
             console.log('d i', d, i);
-            return x(i);}).
+            return x(i) * 10;}).
         y(function(d) {
             console.log(d);
-            return y(d[0]);});
+            return y(d[1]);});
     stocks.onmessage = function(event) {
         var data = JSON.parse(event.data); // read the event as JSON
         for (var k in data) {
@@ -29,14 +29,14 @@ $(function() {
             console.log('items', remembers[k].items());
             var line = $('#' + escape(k), table);
             if (line.length) { // the line exists
-                line.text(Math.round(data[k]) + ' %');
+                line.text(Math.round(data[k]));
             } else {
-                table.append('<tr><td>' + k + '</td><td id="' + escape(k) +
-                    '">' + Math.round(data[k]) +
-                    '% </td><td class="graph" >' +
-                    '<svg:svg width="100%" height="100%">' +
-                    '<svg:path class="line" id="_' +
-                    escape(k) + '"/></svg:svg></td></tr>');
+                table.append('<div class="data"><h2 class="title">' + k +
+                    '</h2><div class="value" id="' + escape(k) + '">' +
+                    Math.round(data[k]) + ' </div>' +
+                    '<div class="graph" ><svg class="draw">' +
+                    '<path class="line" id="_' +
+                    escape(k) + '"/></svg></div>');
             }
             var l = d3.select('#_' + escape(k)).
                 attr('d', draw(remembers[k].items()));

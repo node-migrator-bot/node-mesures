@@ -83,7 +83,7 @@ remember.Remember.prototype.limits = function() {
  */
 remember.Remember.prototype.items = function() {
     var items = [];
-    for (var i = this.timestamps.length - 1; i >= 0; i--) {
+    for (var i = 0; i < this.timestamps.length; i++) {
         var ts = this.timestamps[i];
         items.push([ts, this.values[ts]]);
     }
