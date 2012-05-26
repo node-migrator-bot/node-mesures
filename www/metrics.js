@@ -8,7 +8,7 @@ var remembers = {};
 // X scale will fit values from 0-10 within pixels 0-100
 var x = d3.scale.linear().domain([0, 100]).range([0, 50]);
 // Y scale will fit values from 0-10 within pixels 0-100
-var y = d3.scale.linear().domain([0, 100]).range([0, 30]);
+var y = d3.scale.linear().domain([0, 100]).range([30, 0]);
 var draw = d3.svg.line().
 x(function(d, i) {
     console.log('d i', d, i);
