@@ -33,12 +33,12 @@ stocks.onmessage = function(event) {
         if (! line.empty()) { // the line exists
             line.text(Math.round(data[k]));
         } else {
-            table.html('<div class="data"><h2 class="title">' + k +
+            table.append('div').attr('class', 'data').html('<h2 class="title">' + k +
                     '</h2><div class="value" id="' + escape(k) + '">' +
                     Math.round(data[k]) + ' </div>' +
                     '<div class="graph" ><svg class="draw">' +
                     '<path class="line" id="_' +
-                    escape(k) + '"/></svg></div>');
+                    escape(k) + '"/></svg>');
         }
         var l = d3.select('#_' + escape(k)).
             attr('d', draw(remembers[k].items()));
