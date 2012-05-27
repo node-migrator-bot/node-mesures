@@ -23,12 +23,13 @@ stocks.onmessage = function(event) {
         // Y scale will fit values from 0-10 within pixels 0-100
         var y = d3.scale.linear().
             domain([0, remembers[k].limits().value.max]).
-            range([25, 0]);
-        var draw = d3.svg.line().
+            range([30, 0]);
+        var draw = d3.svg.area().
             x(function(d, i) {
                 console.log('d i', d, i);
                 return x(i) * 5;}).
-            y(function(d) {
+            y0(30).
+            y1(function(d) {
                 console.log(d);
                 return y(d[1]);});
         var line = table.select('#' + escape(k));
@@ -37,8 +38,8 @@ stocks.onmessage = function(event) {
             line.text(Math.round(data[k]));
         } else {
             table.append('div').attr('class', 'data').
-                html('<h2 class="title">' + k +
-                    '</h2><div class="value" id="' + escape(k) + '">' +
+                html('<div class="title">' + k +
+                    '</div><div class="value" id="' + escape(k) + '">' +
                     Math.round(data[k]) + ' </div>' +
                     '<div class="graph" ><svg class="draw">' +
                     '<g/>' +

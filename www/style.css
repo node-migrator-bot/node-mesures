@@ -28,14 +28,26 @@ h1 {
     width: 500px;
 }
 
-#datas h2 {
+#datas .title {
     margin: 3px;
+    float: left;
+    z-index: 2;
+}
+
+#datas .data {
+    margin: 3px;
+}
+
+.graph {
+    width: 450px;
+    height: 30px;
+    margin-left: 0;
 }
 
 .value {
     width: 25px;
     padding: 3px;
-    float: left;
+    float: right;
 }
 
 th {
@@ -46,18 +58,9 @@ td {
     color: black;
 }
 
-.draw {
-}
-
 .line {
-    fill: none;
+    fill: #4c5c79;
     stroke: black;
     stroke-width: 2px;
 }
 
-.graph {
-    width: 300px;
-    height: 30px;
-    border: thin solid black;
-    margin-left: 30px;
-}
