@@ -2,7 +2,9 @@
     "host": "localhost",
     "port": 1337,
     "plugins": {
-        "input/tcp_socket": [8124, "localhost"],
+        "input/tcp_socket": {
+            "port": 8124,
+            "host": "localhost"},
         "state_web": [],
         "proc/stats": [],
         "output/vapor": []
