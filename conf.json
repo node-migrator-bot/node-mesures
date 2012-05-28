@@ -7,6 +7,9 @@
             "host": "localhost"},
         "state_web": [],
         "proc/stats": [],
-        "output/vapor": []
+        "output/vapor": [],
+        "input/eventsource": {
+            "url": "http://ze.garambrogne.net/events"
+        }
     }
 }
