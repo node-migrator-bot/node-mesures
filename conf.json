@@ -10,6 +10,7 @@
         "output/vapor": [],
         "input/eventsource": {
             "url": "http://ze.garambrogne.net/events"
-        }
+        },
+        "input/self": {}
     }
 }
