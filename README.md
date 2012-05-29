@@ -52,14 +52,34 @@ Each modules can access to the _state_ object (in read/write mode) and register 
 ### input/tcp_socket
 
 Set key over a socket, with a minimalistic syntax.
+Answer _ok_ or _error_.
+
+#### Arguments
+
+|port| port |
+|host| host, 0.0.0.0 if you wont to listen every network interface|
+
+### input/eventsource
+
+Chain different _mesures_ servers listeing each other via eventsource.
+
+#### Arguments
+
+| url | eventsource url |
+| prefix | add this prefix to the key |
+
+### input/self
+
+rss and V8 head size and usage.
+
+### proc/stats
+
+Fetch metrics from /proc folder.
 
 ### output/vapor
 
 Remember old values with a capped list.
 
-### proc/stats
-
-Fetch metrics from /proc folder.
 
 Todo
 ----
