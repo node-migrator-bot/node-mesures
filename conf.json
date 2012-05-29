@@ -9,7 +9,8 @@
         "proc/stats": [],
         "output/vapor": [],
         "input/eventsource": {
-            "url": "http://ze.garambrogne.net/events"
+            "url": "http://ze.garambrogne.net/events",
+            "prefix": "ze"
         },
         "input/self": {}
     }
