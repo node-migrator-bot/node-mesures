@@ -5,7 +5,9 @@
         "input/tcp_socket": {
             "port": 8124,
             "host": "localhost"},
-        "state_web": [],
+        "state_web": {
+            "homepage": true
+        },
         "proc/stats": [],
         "output/vapor": [],
         "input/eventsource": {

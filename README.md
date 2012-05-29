@@ -44,10 +44,23 @@ and install the init.d boot scipt.
 
 Put a nice Nginx in front, it will handle the port 80 for you.
 
+Configuration
+-------------
+
+Configuration is done with a json file. It's the first argument for the
+_mesures_ script.
+
+### Internal website
+
+* **host**
+* **port**
+* **homepage** _true_: default website. _false_ : 404 not found. _A path_: default root folder?
+
 Modules
 -------
 
-Each modules can access to the _state_ object (in read/write mode) and register url patterns.
+Each modules can access to the _state_ object (in read/write mode) and register
+url patterns.
 
 ### input/tcp_socket
 
