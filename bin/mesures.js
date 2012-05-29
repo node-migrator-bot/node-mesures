@@ -7,7 +7,7 @@ var http = require('http'),
 var state = new State();
 state.setMaxListeners(200);
 
-process.title = 'metricsd';
+process.title = 'mesures';
 
 var args = process.argv.slice(2);
 var conf;
