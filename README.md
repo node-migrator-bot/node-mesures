@@ -54,19 +54,15 @@ Each modules can access to the _state_ object (in read/write mode) and register 
 Set key over a socket, with a minimalistic syntax.
 Answer _ok_ or _error_.
 
-#### Arguments
-
-|port| port |
-|host| host, 0.0.0.0 if you wont to listen every network interface|
+* **port**
+* **host** host, 0.0.0.0 if you wont to listen every network interface|
 
 ### input/eventsource
 
 Chain different _mesures_ servers listeing each other via eventsource.
 
-#### Arguments
-
-| url | eventsource url |
-| prefix | add this prefix to the key |
+* **url** eventsource url
+* **prefix** add this prefix to the key
 
 ### input/self
 
@@ -90,6 +86,8 @@ Todo
  * √ homepage with some javascripts.
  * √ registerable modules
  * √ config file
+ * √ chain _mesures_
+ * √ self monitoring
  * _ backup JSON file for crash proof
  * _ not only GAUGE, add COUNTER type
 
