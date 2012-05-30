@@ -103,6 +103,9 @@ Todo
  * √ self monitoring
  * _ backup JSON file for crash proof
  * _ not only GAUGE, add COUNTER type
+ * _ handling [collectd HTTP PUT](http://collectd.org/wiki/index.php/Plugin:Write_HTTP)
+ * _ logging
+ * _ display timestamp in the graph
 
 Licence
 -------
