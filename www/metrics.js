@@ -42,6 +42,7 @@ stocks.onmessage = function(event) {
                     '<path class="line" id="_' +
                     escape(k) + '"/></svg>');
         }
+        //[TODO] cache select?
         d3.select('#_' + escape(k)).
             attr('d', draw(remembers[k].items()));
         d3.select('#' + escape(k) + ' g').call(axis);

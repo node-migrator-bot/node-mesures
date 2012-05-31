@@ -1,3 +1,4 @@
+//[TODO] use d3 array tools
 var remember = {};
 
 /**
