@@ -16,15 +16,18 @@ stocks.onmessage = function(event) {
             remembers[k] = new remember.Remember(60 * 1000);
         }
         remembers[k].set(data[k]);
+        var limits = remembers[k].limits();
         // X scale will fit values from 0-10 within pixels 0-100
-        var x = d3.scale.linear().domain([0, 100]).range([0, 50]);
+        var x = d3.scale.linear().
+            domain([limits.ts.min, limits.ts.min + (1000 * 60 * 30)]).
+            range([0, 250]);
         // Y scale will fit values from 0-10 within pixels 0-100
         var y = d3.scale.linear().
-            domain([0, remembers[k].limits().value.max]).
+            domain([0, limits.value.max]).
             range([30, 0]);
         var draw = d3.svg.area().
             x(function(d, i) {
-                return x(i) * 5;}).
+                return x(d[0]);}).
             y0(30).
             y1(function(d) {
                 return y(d[1]);});
