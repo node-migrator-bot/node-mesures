@@ -34,7 +34,6 @@ remember.Remember.prototype.set = function(value) {
 remember.Remember.prototype.garbage = function(now) {
     for (var i = this.timestamps.length - 1; i >= 0; i--) {
         var ts = this.timestamps[i];
-        console.log(ts, now, this.howlong);
         if (ts < (now - this.howlong)) {
             this.timestamps.pop();
             delete this.values[ts];
