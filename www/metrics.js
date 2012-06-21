@@ -12,6 +12,12 @@ var remembers = {};
 stocks.onmessage = function(event) {
     var data = JSON.parse(event.data); // read the event as JSON
     for (var k in data) {
+        console.log(JSON.stringify(data));
+        if (data[k] == null) {
+            delete remembers[k];
+            table.select('#' + escape(k)).remove();
+            continue;
+        }
         if (! remembers[k]) {
             remembers[k] = new remember.Remember(60 * 1000);
         }
@@ -31,24 +37,25 @@ stocks.onmessage = function(event) {
             y0(30).
             y1(function(d) {
                 return y(d[1]);});
-        var line = table.select('#' + escape(k));
         var axis = d3.svg.axis().scale(x).tickSubdivide(3);
+        var line = table.select('#' + escape(k) + ' .value');
         if (! line.empty()) { // the line exists
             line.text(Math.round(data[k]));
         } else {
-            table.append('div').attr('class', 'data').
-                html('<div class="title">' + k +
-                    '</div><div class="value" id="' + escape(k) + '">' +
-                    Math.round(data[k]) + ' </div>' +
+            table.append('div').
+                attr('class', 'data').
+                attr('id', escape(k)).
+                html('<div class="title">' + k + '</div>' +
+                    '<div class="value">' + Math.round(data[k]) + ' </div>' +
                     '<div class="graph" ><svg class="draw">' +
                     '<g/>' +
-                    '<path class="line" id="_' +
-                    escape(k) + '"/></svg>');
+                    '<path class="line" /></svg></div>');
         }
         //[TODO] cache select?
-        d3.select('#_' + escape(k)).
+        d3.select('#' + escape(k) + ' .line').
             attr('d', draw(remembers[k].items()));
-        d3.select('#' + escape(k) + ' g').call(axis);
+        //[FIXME] decent axis drawing
+        //d3.select('#' + escape(k) + ' g').call(axis);
 
     }
 };

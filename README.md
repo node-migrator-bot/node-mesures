@@ -18,7 +18,7 @@ You can specify a config file as first argument. Have a look at _conf.json_
 
 In an other terminnal
 
-    echo "answer 42" | nc localhost 8124
+    echo "SET answer 42" | nc localhost 8124
 
 In a browser
 
@@ -64,11 +64,19 @@ url patterns.
 
 ### input/tcp_socket
 
-Set key over a socket, with a minimalistic syntax.
-Answer _ok_ or _error_.
+Send command to the server.
+It uses the redis old syntax.
+Words are space separated, first word is the action.
+Action is case insensitive.
+Answer start with a + if it works, a - for an error.
 
 * **port**
 * **host** host, 0.0.0.0 if you wont to listen every network interface|
+
+#### Commands
+
+* _SET key value_
+* _DELETE key_
 
 ### input/eventsource
 
@@ -106,6 +114,7 @@ Todo
  * _ handling [collectd HTTP PUT](http://collectd.org/wiki/index.php/Plugin:Write_HTTP)
  * _ logging
  * _ display timestamp in the graph
+ * _ handling statsd UDP protocol
 
 Licence
 -------
