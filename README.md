@@ -85,6 +85,7 @@ Answer start with a + if it works, a - for an error.
 
 * _SET key value_
 * _DELETE key_
+* _INCR_ key [interval]_
 
 ### input/eventsource
 
