@@ -14,6 +14,10 @@
             "url": "http://ze.garambrogne.net/events",
             "prefix": "ze"
         },
-        "input/self": {}
+        "input/self": {},
+        "input/collectd": {
+            "port": 8125,
+            "host": "localhost"
+        }
     }
 }
