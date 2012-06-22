@@ -85,7 +85,7 @@ Answer start with a + if it works, a - for an error.
 
 * _SET key value_
 * _DELETE key_
-* _INCR_ key value [interval (ms)]_
+* _INCR key value [interval (ms)]_
 
 ### input/eventsource
 
@@ -97,6 +97,23 @@ Chain different _mesures_ servers listeing each other via eventsource.
 ### input/self
 
 rss and V8 head size and usage.
+
+### input/collectd
+
+[Collectd](http://collectd.org) can write its data priodicaly.
+
+Collectd conf :
+
+    LoadPlugin write_http
+    <Plugin write_http>
+        <URL "http://localhost:8125/collectd-post">
+            Format "JSON"
+        </URL>
+    </Plugin>
+
+It uses a private webserver with a different port
+* **port** 8125
+* **host** localhost
 
 ### proc/stats
 
