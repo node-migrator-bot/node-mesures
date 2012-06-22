@@ -10,6 +10,8 @@
         "eventsource": " >= 0.0.5"
     },
     "devDependencies": {
+        "mocha": " >= 1.2.0",
+        "should": "*"
     },
     "engines": ["node >= 0.6.0"],
     "licences": {
@@ -17,5 +19,8 @@
     },
     "bin": {
         "mesures": "bin/mesures.js"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/mocha"
     }
 }

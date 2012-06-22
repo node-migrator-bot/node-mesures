@@ -7,6 +7,14 @@ Mesures, like metrics in French.
 
 Write value on a socket, with `nc` or other low tech tool. Read it with curl.
 
+Test it
+-------
+
+Mesure uses [Mocha](http://visionmedia.github.com/mocha/) tests.
+
+    npm install
+    npm test
+
 Try it
 ------
 
