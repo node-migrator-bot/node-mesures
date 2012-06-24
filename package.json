@@ -7,7 +7,8 @@
     "repository": "git://github.com/bearstech/node-mesures.git",
     "author": "Mathieu Lecarme <mlecarme@bearstech.com>",
     "dependencies": {
-        "eventsource": " >= 0.0.5"
+        "eventsource": " >= 0.0.5",
+        "hoard": " >= 0.1.5"
     },
     "devDependencies": {
         "mocha": " >= 1.2.0",
