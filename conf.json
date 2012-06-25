@@ -10,6 +10,9 @@
         },
         "proc/stats": [],
         "output/vapor": [],
+        "output/cube": {
+            "path": "/tmp/"
+        },
         "input/eventsource": {
             "url": "http://ze.garambrogne.net/events",
             "prefix": "ze"
