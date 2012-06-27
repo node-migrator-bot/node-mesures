@@ -32,13 +32,48 @@ describe('Cube', function() {
     it('should get some values', function(done) {
         var DB = '/tmp/get_test';
         var c = new cube.Cube(mockState, mockRouter);
-        feed(DB, 50, function() {
+        feed(DB, 1000, function() {
             var now = Math.floor(Date.now() / 1000);
-            c.get('get_test MEAN', now - 50 , now, 5, function(err, values) {
-                if (err) throw err;
-                console.log('values', values);
-                done();
+            var chrono = Date.now();
+            function mean(cb) {
+                c.get('get_test MEAN', now - 50 , now, 5, function(err, values) {
+                    if (err) throw err;
+                    console.log('mean', values);
+                    cb();
+                });
+            }
+            function min(cb) {
+                c.get('get_test MIN', now - 50 , now, 5, function(err, values) {
+                    if (err) throw err;
+                    console.log('min', values);
+                    cb();
+                });
+            }
+            function max(cb) {
+                c.get('get_test MAX', now - 50 , now, 5, function(err, values) {
+                    if (err) throw err;
+                    console.log('max', values);
+                    cb();
+                });
+            }
+            function median(cb) {
+                c.get('get_test MEDIAN', now - 50 , now, 5, function(err, values) {
+                    if (err) throw err;
+                    console.log('median', values);
+                    cb();
+                });
+            }
+            mean(function(cb) {
+                min(function(cb) {
+                    max(function(cb) {
+                        median(function(cb) {
+                            console.log("Chrono", Date.now() - chrono);
+                            done();
+                        });
+                    });
+                });
             });
+
 
 
         });
@@ -55,7 +90,7 @@ function feed(db, size, cb) {
     hoard.create(db, [[1, 100], [10, 6000]], 0.5, function(err) {
         if (err) throw err;
         var now = Math.floor(Date.now() / 1000);
-        var cpt = 50;
+        var cpt = size;
         //[FIXME] use hoard multiple assignement.
         var update = function() {
             cpt--;
