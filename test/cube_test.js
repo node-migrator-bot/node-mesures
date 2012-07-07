@@ -84,7 +84,7 @@ describe('Cube', function() {
  * Create a random hoard db.
  */
 function feed(db, size, cb) {
-    if (path.existsSync(db)) {
+    if (fs.existsSync(db)) {
         fs.unlinkSync(db);
     }
     hoard.create(db, [[1, 100], [10, 6000]], 0.5, function(err) {
